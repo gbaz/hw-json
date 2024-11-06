@@ -39,13 +39,19 @@ import HaskellWorks.Data.RankSelect.Base.Rank0
 import HaskellWorks.Data.RankSelect.Base.Rank1
 import HaskellWorks.Data.RankSelect.Base.Select1
 import Prelude                                        hiding (drop)
-import Text.PrettyPrint.ANSI.Leijen                   hiding ((<$>))
+import Prettyprinter
 
 import qualified Data.Attoparsec.ByteString.Char8 as ABC
 import qualified Data.ByteString                  as BS
 import qualified Data.DList                       as DL
 import qualified Data.Text                        as T
 import qualified HaskellWorks.Data.BalancedParens as BP
+
+text = pretty
+red = id
+dullgreen = id
+cyan = id
+
 
 -- | Partial JSON type.
 --

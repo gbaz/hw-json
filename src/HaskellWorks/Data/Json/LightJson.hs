@@ -31,7 +31,8 @@ import HaskellWorks.Data.RankSelect.Base.Select1
 import HaskellWorks.Data.TreeCursor
 import HaskellWorks.Data.Uncons
 import Prelude                                        hiding (drop)
-import Text.PrettyPrint.ANSI.Leijen
+import Prettyprinter
+-- import Text.PrettyPrint.ANSI.Leijen
 
 import qualified Data.ByteString                      as BS
 import qualified Data.ByteString.Unsafe               as BSU
@@ -39,6 +40,11 @@ import qualified Data.List                            as L
 import qualified Data.Text                            as T
 import qualified HaskellWorks.Data.BalancedParens     as BP
 import qualified HaskellWorks.Data.Json.Simple.Cursor as JSC
+
+text = pretty
+red = id
+dullgreen = id
+cyan = id
 
 data LightJson c
   = LightJsonString Text
@@ -66,7 +72,7 @@ class LightJsonAt a where
   lightJsonAt :: a -> LightJson a
 
 instance LightJsonAt c => Pretty (LightJsonField c) where
-  pretty (LightJsonField k v) = text (show k) <> text ": " <> pretty v
+  pretty (LightJsonField k v) = text (show k) <> ": " <> pretty v
 
 instance LightJsonAt c => Pretty (LightJson c) where
   pretty c = case c of

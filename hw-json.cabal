@@ -40,7 +40,7 @@ flag sse42
 common base                       { build-depends: base                       >= 4.11       && < 5      }
 
 common aeson                      { build-depends: aeson                      >= 2.0        && < 2.3    }
-common ansi-wl-pprint             { build-depends: ansi-wl-pprint             >= 0.6.8.2    && < 2      }
+common ansi-wl-pprint             { build-depends: prettyprinter              >= 1          && < 2      }
 common array                      { build-depends: array                      >= 0.5        && < 0.6    }
 common attoparsec                 { build-depends: attoparsec                 >= 0.13       && < 0.15   }
 common attoparsec-aeson           { build-depends: attoparsec-aeson           >= 2          && < 3      }

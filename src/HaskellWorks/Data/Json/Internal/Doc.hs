@@ -2,9 +2,9 @@ module HaskellWorks.Data.Json.Internal.Doc
   ( hEncloseSep
   ) where
 
-import Text.PrettyPrint.ANSI.Leijen
+import Prettyprinter
 
-hEncloseSep :: Doc -> Doc -> Doc -> [Doc] -> Doc
+hEncloseSep :: Doc a -> Doc a -> Doc a -> [Doc a] -> Doc a
 hEncloseSep l r s ds = case ds of
   []  -> l <> r
   [d] -> l <> d <> r
